@@ -22,7 +22,7 @@ export default function Layout({ children }) {
       </Head>
 
       {router.pathname === "/login" || router.pathname === "/nuevacuenta" ? (
-        <div className="bg-gray-800 min-h-sreen flex flex-col justify-center">
+        <div className="bg-gray-800 min-h-screen flex flex-col justify-center">
           <div>{children}</div>
         </div>
       ) : (
