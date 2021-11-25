@@ -1,9 +1,58 @@
-import React from "react";
+import React, { useState } from "react";
 import Layout from "../components/Layout";
 import { useFormik } from "formik";
 import * as Yup from "yup";
+import { gql, useMutation } from "@apollo/client";
+import { useRouter } from "next/router";
+
+const NUEVO_CLIENTE = gql`
+  mutation nuevoCliente($input: ClienteInput) {
+    nuevoCliente(input: $input) {
+      id
+      nombre
+      apellido
+      empresa
+      email
+      telefono
+    }
+  }
+`;
+
+const OBTENER_CLIENTES_USUARIO = gql`
+  query obtenerClientesVendedor {
+    obtenerClientesVendedor {
+      id
+      nombre
+      apellido
+      empresa
+      email
+    }
+  }
+`;
 
 const NuevoCliente = () => {
+  const router = useRouter();
+
+  //mensaje alerta
+  const [mensaje, guardarMensaje] = useState(null);
+
+  // Mutation para crear nuevos clientes
+  const [nuevoCliente] = useMutation(NUEVO_CLIENTE, {
+    update(cache, { data: { nuevoCliente } }) {
+      // actualizar cache
+      // obtener el obj de cache que deseamos actualizar
+      const { obtenerClientesVendedor } = cache.readQuery({
+        query: OBTENER_CLIENTES_USUARIO,
+      });
+      //reescribir el cache (como si fuera un estado de react)
+      cache.writeQuery({
+        query: OBTENER_CLIENTES_USUARIO,
+        data: {
+          obtenerClientesVendedor: [...obtenerClientesVendedor, nuevoCliente],
+        },
+      });
+    },
+  });
   const formik = useFormik({
     initialValues: {
       nombre: "",
@@ -20,12 +69,44 @@ const NuevoCliente = () => {
         .email("Email no válido")
         .required("Ingresar el email del cliente"),
     }),
-    onSubmit: (valores) => {},
+    onSubmit: async (valores) => {
+      try {
+        const { nombre, apellido, empresa, email, telefono } = valores;
+
+        const { data } = await nuevoCliente({
+          variables: {
+            input: {
+              nombre,
+              apellido,
+              empresa,
+              email,
+              telefono,
+            },
+          },
+        });
+        router.push("/");
+      } catch (error) {
+        guardarMensaje(error.message.replace("GraphQL error:", ""));
+
+        setTimeout(() => {
+          guardarMensaje(null);
+        }, 2000);
+      }
+    },
   });
+
+  const mostrarMensaje = () => {
+    return (
+      <div className="bg-white py-2 px-3 w-full my-3 max-w-sm text-center mx-auto">
+        <p>{mensaje}</p>
+      </div>
+    );
+  };
 
   return (
     <Layout>
       <h1 className="text-2xl text-gray-800 font-normal">Nuevo Cliente</h1>
+      {mensaje && mostrarMensaje()}
 
       <div className="flex justify-center mt-5">
         <div className="w-full max-w-lg">
