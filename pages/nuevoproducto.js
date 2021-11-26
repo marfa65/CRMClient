@@ -96,7 +96,7 @@ const NuevoProducto = () => {
 
   return (
     <Layout>
-      <h1 className="text-2xl text-gray-800 font-light">
+      <h1 className="text-2xl text-gray-800 font-normal underline">
         Crear Nuevo Producto
       </h1>
 

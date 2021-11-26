@@ -104,7 +104,9 @@ const NuevoCliente = () => {
 
   return (
     <Layout>
-      <h1 className="text-2xl text-gray-800 font-normal">Nuevo Cliente</h1>
+      <h1 className="text-2xl text-gray-800 font-normal underline">
+        Nuevo Cliente
+      </h1>
       {mensaje && mostrarMensaje()}
 
       <div className="flex justify-center mt-5">
@@ -243,7 +245,7 @@ const NuevoCliente = () => {
             </div>
             <input
               type="submit"
-              className="bg-gray-800 w-full mt-5 p-2 text-white uppercase font-bold cursor-pointer transition duration-700 ease-in-out hover:bg-blue-600 hover:text-black"
+              className="bg-gray-800 w-full mt-5 p-2 rounded text-white uppercase font-bold cursor-pointer transition duration-700 ease-in-out hover:bg-blue-600 hover:text-black"
               value="Registrar Cliente"
             />
           </form>

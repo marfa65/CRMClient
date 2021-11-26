@@ -73,7 +73,7 @@ const Cliente = ({ cliente }) => {
       query: { id },
     });
   };
-  console.log("id cliente", id);
+  // console.log("id cliente", id);
   return (
     <tr>
       <td className="border px-4 py-2">
@@ -85,7 +85,7 @@ const Cliente = ({ cliente }) => {
       <td className="border px-4 ml-2">
         <button
           type="button"
-          className="flex justify-center  items-center bg-green-700 py-2 px-4 w-full text-white rounded text-xs uppercase font-bold transition duration-700 ease-in-out hover:bg-green-500 hover:text-black"
+          className="flex justify-center  items-center bg-green-600 py-2 px-4 w-full text-white rounded text-xs uppercase font-bold transition duration-700 ease-in-out hover:bg-green-400 hover:text-black"
           onClick={() => editarCliente(id)}
         >
           Editar

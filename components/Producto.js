@@ -88,7 +88,7 @@ const Producto = ({ producto }) => {
       <td className="border px-4 py-2">
         <button
           type="button"
-          className="flex justify-center items-center bg-green-600 py-2 px-4 w-full text-white rounded text-xs uppercase font-bold transition duration-700 ease-in-out hover:bg-green-500 hover:text-black"
+          className="flex justify-center items-center bg-green-600 py-2 px-4 w-full text-white rounded text-xs uppercase font-bold transition duration-700 ease-in-out hover:bg-green-400 hover:text-black"
           onClick={() => editarProducto()}
         >
           Editar

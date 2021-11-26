@@ -50,7 +50,7 @@ export default function Index() {
       <Layout>
         <h1 className="text-2xl text-gray-800 font-normal">Clientes</h1>
         <Link href="/nuevocliente">
-          <a className="bg-blue-700 py-2 px-5 mt-5 inline-block text-white rounded text-sm hover:bg-gray-800 mb-2 uppercase font-bold transition duration-700 ease-in-out hover:bg-gray-800 hover:text-gray-200">
+          <a className="bg-blue-600 py-2 px-5 mt-3 inline-block text-white rounded text-sm mb-3 uppercase font-bold transition duration-700 ease-in-out hover:bg-gray-800 hover:text-gray-200">
             Nuevo Cliente
           </a>
         </Link>
