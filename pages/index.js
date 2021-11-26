@@ -26,7 +26,20 @@ export default function Index() {
   // console.log(loading);
   // console.log(error);
 
-  if (loading) return "Cargando...";
+  if (loading) {
+    return (
+      <div className="flex justify-center items-center">
+        <div
+          className="
+          animate-spin
+          rounded-full
+          h-32
+          w-32
+          border-t-2 border-b-2 border-purple-500"
+        ></div>
+      </div>
+    );
+  }
 
   if (!data.obtenerClientesVendedor) {
     return router.push("/login");
@@ -37,17 +50,18 @@ export default function Index() {
       <Layout>
         <h1 className="text-2xl text-gray-800 font-normal">Clientes</h1>
         <Link href="/nuevocliente">
-          <a className="bg-blue-800 py-2 px-5 mt-5 inline-block text-white rounded text-sm hover:bg-gray-800 mb-2 uppercase font-bold">
+          <a className="bg-blue-700 py-2 px-5 mt-5 inline-block text-white rounded text-sm hover:bg-gray-800 mb-2 uppercase font-bold transition duration-700 ease-in-out hover:bg-gray-800 hover:text-gray-200">
             Nuevo Cliente
           </a>
         </Link>
         <table className="table-auto shadow-md mt-10 w-full w-lg">
-          <thead className="bg-gray-800">
+          <thead className="bg-gray-700">
             <tr className="text-white">
-              <th className="w-1/5 py-2">Nombre</th>
-              <th className="w-1/5 py-2">Empresa</th>
-              <th className="w-1/5 py-2">Email</th>
-              <th className="w-1/5 py-2">Eliminar</th>
+              <th className="w-1/4 py-2">Nombre</th>
+              <th className="w-1/4 py-2">Empresa</th>
+              <th className="w-1/4 py-2">Email</th>
+              <th className="w-1/8 py-2">Editar</th>
+              <th className="w-1/8 py-2">Eliminar</th>
             </tr>
           </thead>
 
