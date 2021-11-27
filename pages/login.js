@@ -132,7 +132,7 @@ const Login = () => {
               ) : null}
               <input
                 type="submit"
-                className="bg-gray-700 w-full mt-5 p-2 text-white uppercase rounded cursor-pointer hover:bg-gray-900"
+                className="bg-gray-800 w-full mt-5 p-2 text-white uppercase rounded font-bold cursor-pointer transition duration-700 ease-in-out hover:bg-blue-700 hover:text-white"
                 value="Iniciar Sesión"
               />
             </form>

@@ -102,6 +102,29 @@ const NuevaCuenta = () => {
               className="bg-white rounded shdow-md px-8 pt-6 pb-8 mb-4"
               onSubmit={formik.handleSubmit}
             >
+              <div className="flex justify-end">
+                <button
+                  type="button"
+                  className="flex justify-end  items-center bg-red-700 py-2 px-4 w-auto text-white rounded text-xs uppercase font-bold transition duration-700 ease-in-out hover:bg-red-500 hover:text-black"
+                  onClick={() => router.push("/login")}
+                >
+                  Cancelar
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="h-5 w-5 ml-2"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M12 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2M3 12l6.414 6.414a2 2 0 001.414.586H19a2 2 0 002-2V7a2 2 0 00-2-2h-8.172a2 2 0 00-1.414.586L3 12z"
+                    />
+                  </svg>
+                </button>
+              </div>
               <div className="mb-4">
                 <label
                   className="block text-gray-700 text-sm font-bold mb-2"
@@ -192,7 +215,7 @@ const NuevaCuenta = () => {
               ) : null}
               <input
                 type="submit"
-                className="bg-gray-800 w-full mt-5 p-2 text-white uppercase hover:bg-gray-900"
+                className="bg-gray-800 w-full mt-5 p-2 text-white uppercase rounded font-bold cursor-pointer transition duration-700 ease-in-out hover:bg-blue-700 hover:text-white"
                 value="Crear Cuenta"
               />
             </form>
