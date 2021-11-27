@@ -76,7 +76,7 @@ const Cliente = ({ cliente }) => {
   // console.log("id cliente", id);
   return (
     <tr>
-      <td className="border px-4 py-2">
+      <td className="border px-4 py-2 capitalize">
         {nombre} {apellido}
       </td>
       <td className="border px-4 py-2">{empresa} </td>
@@ -108,7 +108,7 @@ const Cliente = ({ cliente }) => {
       <td className="border px-4 py-2">
         <button
           type="button"
-          className="flex justify-center  items-center bg-red-700 py-2 px-4 w-full text-white rounded text-xs uppercase font-bold transition duration-700 ease-in-out hover:bg-red-500 hover:text-black"
+          className="flex justify-center items-center bg-red-700 py-2 px-4 w-full text-white rounded text-xs uppercase font-bold transition duration-700 ease-in-out hover:bg-red-500 hover:text-black"
           onClick={() => confirmarEliminarCliente()}
         >
           Eliminar

@@ -83,7 +83,7 @@ const Login = () => {
         <div className="flex justify-center mt-5">
           <div className="w-full max-w-sm">
             <form
-              className="bg-white rounded shdow-md px-8 pt-6 pb-8 mb-4"
+              className="bg-white rounded shadow-md px-8 pt-6 pb-8 mb-4"
               onSubmit={formik.handleSubmit}
             >
               <div className="mb-4">
@@ -94,7 +94,7 @@ const Login = () => {
                   Email
                 </label>
                 <input
-                  className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                  className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:ring focus:border-blue-300"
                   id="email"
                   type="email"
                   placeholder="Email Usuario"
@@ -116,7 +116,7 @@ const Login = () => {
                   Password
                 </label>
                 <input
-                  className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                  className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:ring focus:border-blue-300"
                   id="password"
                   type="password"
                   placeholder="Password Usuario"
@@ -132,7 +132,7 @@ const Login = () => {
               ) : null}
               <input
                 type="submit"
-                className="bg-gray-800 w-full mt-5 p-2 text-white uppercase hover:cursor-pointer hover:bg-gray-900"
+                className="bg-gray-700 w-full mt-5 p-2 text-white uppercase rounded cursor-pointer hover:bg-gray-900"
                 value="Iniciar Sesión"
               />
             </form>
