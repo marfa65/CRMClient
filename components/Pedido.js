@@ -1,3 +1,4 @@
+/*eslint-disable*/
 import React, { useState, useEffect } from "react";
 import { gql, useMutation } from "@apollo/client";
 import Swal from "sweetalert2";
