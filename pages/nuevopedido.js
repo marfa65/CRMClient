@@ -64,7 +64,7 @@ const NuevoPedido = () => {
         },
       });
     },
-  }); // TODO ACTUALIZAR EL CACHE
+  }); // ACTUALIZAR EL CACHE
 
   const validarPedido = () => {
     return !productos.every((producto) => producto.cantidad > 0) ||
@@ -81,7 +81,6 @@ const NuevoPedido = () => {
     const pedido = productos.map(
       ({ __typename, existencia, ...producto }) => producto
     );
-    // console.log(pedido);
 
     try {
       const { data } = await nuevoPedido({
@@ -93,7 +92,6 @@ const NuevoPedido = () => {
           },
         },
       });
-      // console.log(data);
 
       // Redireccionar
       router.push("/pedidos");
@@ -119,7 +117,9 @@ const NuevoPedido = () => {
 
   return (
     <Layout>
-      <h1 className="text-2xl text-gray-800 font-light">Crear Nuevo Pedido</h1>
+      <h1 className="text-2xl text-gray-800 font-normal underline">
+        Crear Nuevo Pedido
+      </h1>
 
       {mensaje && mostrarMensaje()}
 
