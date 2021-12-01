@@ -35,18 +35,20 @@ const NuevoProducto = () => {
   // Mutation de apollo
   const [nuevoProducto] = useMutation(NUEVO_PRODUCTO, {
     update(cache, { data: { nuevoProducto } }) {
-      // obtener el objeto de cache
-      const { obtenerProductos } = cache.readQuery({
-        query: OBTENER_PRODUCTOS,
-      });
+      if (cache.data.data.ROOT_QUERY.obtenerProductos) {
+        // obtener el objeto de cache
+        const { obtenerProductos } = cache.readQuery({
+          query: OBTENER_PRODUCTOS,
+        });
 
-      // reescribir ese objeto
-      cache.writeQuery({
-        query: OBTENER_PRODUCTOS,
-        data: {
-          obtenerProductos: [...obtenerProductos, nuevoProducto],
-        },
-      });
+        // reescribir ese objeto
+        cache.writeQuery({
+          query: OBTENER_PRODUCTOS,
+          data: {
+            obtenerProductos: [...obtenerProductos, nuevoProducto],
+          },
+        });
+      }
     },
   });
 
