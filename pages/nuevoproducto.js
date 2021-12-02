@@ -211,7 +211,7 @@ const NuevoProducto = () => {
 
             <input
               type="submit"
-              className="bg-gray-800 w-full mt-5 p-2 text-white uppercase font-bold cursor-pointer transition duration-700 ease-in-out hover:bg-blue-600 hover:text-black"
+              className="bg-gray-800 w-full mt-5 p-2 text-white rounded uppercase font-bold cursor-pointer transition duration-700 ease-in-out hover:bg-blue-600 hover:text-black"
               value="Agregar Nuevo Producto"
             />
           </form>
