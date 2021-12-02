@@ -67,13 +67,15 @@ const Pedido = ({ pedido }) => {
   // Función que modifica el color del pedido de acuerdo a su estado
   const clasePedido = () => {
     if (estadoPedido === "PENDIENTE") {
-      setClase("border-yellow-500");
+      setClase("border-yellow-500 bg-gradient-to-l from-yellow-100 ");
+      // setClase("border-yellow-500");
     } else if (estadoPedido === "COMPLETADO") {
-      setClase("border-green-500");
+      setClase("border-green-600 bg-gradient-to-r from-green-100 ");
     } else {
-      setClase("border-red-800");
+      setClase("border-red-800 bg-gradient-to-r from-red-100 ");
     }
   };
+  // bg-gradient-to-r from-yellow-400 via-red-500 to-pink-500
 
   const cambiarEstadoPedido = async (nuevoEstado) => {
     try {
@@ -191,11 +193,14 @@ const Pedido = ({ pedido }) => {
 
         <p className="text-gray-800 mt-3 font-bold ">
           Total a pagar:
-          <span className="font-light"> $ {total}</span>
+          <span className="font-normal">
+            {" "}
+            $ {total.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".")}
+          </span>
         </p>
 
         <button
-          className="uppercase text-xs font-bold  flex items-center mt-4 bg-red-800 px-5 py-2 inline-block text-white rounded leading-tight"
+          className="uppercase text-xs font-bold  flex items-center mt-4  px-5 py-2 inline-block text-white rounded leading-tight transition duration-700 ease-in-out bg-yellow-600 hover:bg-red-900 transform hover:-translate-y-1 hover:scale-110"
           onClick={() => confirmarEliminarPedido()}
         >
           Eliminar Pedido
