@@ -33,8 +33,8 @@ const Header = () => {
   };
 
   return (
-    <div className="flex justify-between mb-6">
-      <p className="mr-2 text-xl capitalize">
+    <div className="sm:flex sm:justify-between mb-6">
+      <p className="mr-2 mb-5 lg:mb-0 text-xl capitalize">
         Hola: {nombre} {apellido}
       </p>
       <button

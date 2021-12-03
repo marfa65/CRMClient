@@ -43,7 +43,7 @@ const Productos = () => {
         <h1 className="text-2xl text-gray-800 font-normal">Productos</h1>
 
         <Link href="/nuevoproducto">
-          <a className="bg-blue-600 py-2 px-5 mt-3 inline-block text-white mb-3 rounded uppercase font-bold text-sm transition duration-700 ease-in-out hover:bg-gray-800 hover:text-gray-200">
+          <a className="bg-blue-600 py-2 px-5 mt-3 inline-block text-white rounded text-sm mb-3 uppercase font-bold transition duration-700 ease-in-out hover:bg-gray-800 hover:text-gray-200">
             Nuevo Producto
           </a>
         </Link>
