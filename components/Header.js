@@ -18,7 +18,22 @@ const Header = () => {
   const { data, loading, error } = useQuery(OBTENER_USUARIO);
 
   //proteger que no accedamos a data antes de tener resultados
-  if (loading) return "cargando..."; // sin esto, data da undefined !!!!
+  // if (loading) return "cargando..."; // sin esto, data da undefined !!!!
+
+  if (loading) {
+    return (
+      <div className="flex justify-center items-center">
+        <div
+          className="
+          animate-spin
+          rounded-full
+          h-32
+          w-32
+          border-t-2 border-b-2 border-purple-500"
+        ></div>
+      </div>
+    );
+  }
 
   // si no hay data...
   if (!data) {

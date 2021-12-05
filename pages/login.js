@@ -71,8 +71,16 @@ const Login = () => {
 
   const mostrarMensaje = () => {
     return (
-      <div className="bg-white py-2 px-3 w-full my-3 max-w-sm text-center mx-auto">
-        <p>{mensaje}</p>
+      <div className="flex justify-center items-center">
+        <div
+          className="
+          animate-spin
+          rounded-full
+          h-32
+          w-32
+          border-t-2 border-b-2 border-pink-500"
+        ></div>
+        <p className="text-white text-2xl font-normal mx-2">{mensaje}</p>
       </div>
     );
   };

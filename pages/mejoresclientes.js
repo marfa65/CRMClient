@@ -34,9 +34,21 @@ const MejoresClientes = () => {
     };
   }, [startPolling, stopPolling]);
 
-  if (loading) return "cargando...";
-
-  console.log(data);
+  // if (loading) return "cargando...";
+  if (loading) {
+    return (
+      <div className="flex justify-center items-center">
+        <div
+          className="
+          animate-spin
+          rounded-full
+          h-32
+          w-32
+          border-t-2 border-b-2 border-purple-500"
+        ></div>
+      </div>
+    );
+  }
 
   const { mejoresClientes } = data;
 
