@@ -109,7 +109,7 @@ const Cliente = ({ cliente }) => {
         <button
           type="button"
           className="flex justify-center items-center bg-red-700 py-2 px-4 w-full text-white rounded text-xs uppercase font-bold transition duration-700 ease-in-out hover:bg-red-500 hover:text-black"
-          onClick={() => confirmarEliminarCliente()}
+          onClick={() => confirmarEliminarCliente(id)}
         >
           Eliminar
           <svg

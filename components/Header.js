@@ -15,7 +15,7 @@ const OBTENER_USUARIO = gql`
 const Header = () => {
   const router = useRouter();
 
-  const { data, loading, error } = useQuery(OBTENER_USUARIO);
+  const { data, loading, error, client } = useQuery(OBTENER_USUARIO);
 
   //proteger que no accedamos a data antes de tener resultados
   // if (loading) return "cargando..."; // sin esto, data da undefined !!!!
@@ -35,15 +35,11 @@ const Header = () => {
     );
   }
 
-  // si no hay data...
-  if (!data) {
-    return router.push("/login");
-  }
-
   const { nombre, apellido } = data.obtenerUsuario;
 
   const cerrarSesion = () => {
     localStorage.removeItem("token");
+    client.clearStore();
     router.push("/login");
   };
 

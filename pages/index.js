@@ -21,7 +21,7 @@ export default function Index() {
   const router = useRouter();
 
   // consulta de Apollo
-  const { data, loading, error } = useQuery(OBTENER_CLIENTES_USUARIO);
+  const { data, loading, error, client } = useQuery(OBTENER_CLIENTES_USUARIO);
   // console.log(data);
   // console.log(loading);
   // console.log(error);
@@ -42,7 +42,20 @@ export default function Index() {
   }
 
   if (!data.obtenerClientesVendedor) {
-    return router.push("/login");
+    client.clearStore();
+    router.push("/login");
+    return (
+      <div className="flex justify-center items-center">
+        <div
+          className="
+          animate-spin
+          rounded-full
+          h-32
+          w-32
+          border-t-2 border-b-2 border-purple-500"
+        ></div>
+      </div>
+    );
   }
 
   return (
