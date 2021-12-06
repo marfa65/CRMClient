@@ -1,6 +1,6 @@
 import { ApolloClient, createHttpLink, InMemoryCache } from "@apollo/client";
 import fetch from "node-fetch";
-import { setContext } from "apollo-link-context";
+import { setContext } from "@apollo/client/link/context";
 
 const httpLink = createHttpLink({
   uri: "http://localhost:4000",
