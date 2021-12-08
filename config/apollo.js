@@ -3,7 +3,7 @@ import fetch from "node-fetch";
 import { setContext } from "@apollo/client/link/context";
 
 const httpLink = createHttpLink({
-  uri: "http://localhost:4000",
+  uri: "https://crmgraphql.herokuapp.com/",
   fetch,
 });
 
