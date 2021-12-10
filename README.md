@@ -1,34 +1,44 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# CRM Gestor de Clientes
 
-## Getting Started
+## Descripción
 
-First, run the development server:
+Es una aplicación comercial, para la gestión de vendedores, clientes, productos y pedidos.
+Cuenta con gráficos de los mejores vendedores y de los mejores clientes.
+Crear nuevas cuentas de usuario, autenticación con JWT, alta y baja de clientes, productos y pedidos, 
+de acuerdo al vendedor logeado, formularios con validaciones por campo.
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+## Abrir aplicación
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+[Link](http://crmclient-ashen.vercel.app/)
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+## Tecnologias Utilizadas
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+### Front End
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+- Next.js
+- Apollo
+- Tailwind
+- formik
+- recharts
+- sweetalert2
 
-## Learn More
+### Back End
 
-To learn more about Next.js, take a look at the following resources:
+- Apollo-server
+- GraphQL
+- Mongoose
+- Mongo Atlas DB
+- JWT
+- Bcryptjs
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Imagenes
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+<img src="./img/2021-12-08 (2).png" />
+<img src="./img/2021-12-08 (3).png" />
+<img src="./img/2021-12-08 (8).png" />
 
-## Deploy on Vercel
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Github Back End
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+marfa65/CRMGraphQL
+
