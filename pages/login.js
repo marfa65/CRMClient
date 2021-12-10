@@ -88,7 +88,10 @@ const Login = () => {
   return (
     <>
       <Layout>
-        <h1 className="text-center text-2xl text-white font-normal">Login</h1>
+        <h1 className="text-center text-4xl text-white font-semibold mb-10 underline">
+          C R M - Gestor de Clientes
+        </h1>
+        <h2 className="text-center text-2xl text-white font-normal">Login</h2>
 
         {mensaje && mostrarMensaje()}
         <div className="flex justify-center mt-5">
